@@ -1,0 +1,12 @@
+.myAlert-top{
+    position: fixed;
+    top: 5px;
+    right: 1%;
+    width: 30%;
+}
+.alert{
+    display: none;
+}
+#mainPage{
+    margin-top: 60px;
+}

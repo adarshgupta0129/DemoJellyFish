@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo Jellyfish</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <a class="btn btn-info" href="timer.html">Timer</a>
+        <div class="myAlert-top alert alert-info">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong id="alertText"></strong>
+        </div>
+        <br />
+        <div class="container" id="mainPage">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="jumbotron">
+                        <h2>View Authors <button type="button" class="btn btn-info pull-right"
+                                onclick="openAuthorModal()">+</button></h2>
+                        <table class="table table-hover" id="authorData">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="jumbotron">
+                        <h2>View Task <button type="button" class="btn btn-info pull-right"
+                                onclick="openTaskModal()">+</button></h2>
+                        <table class="table table-hover" id="taskData">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Author Modal Starts-->
+    <div class="modal fade" id="authorModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Author</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Author Name:</label>
+
+                        <input type="hidden" id="authId">
+                        <input type="text" class="form-control" id="authName" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Author Email:</label>
+                        <input type="text" class="form-control" id="authEmail" placeholder="Enter Email">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="addAuthor" onclick="addAuthor()">Save</button>
+                    <button type="button" class="btn btn-success" id="editAuthor" onclick="editAuthor()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Author Modal Ends-->
+    
+
+    <!-- Task Modal Starts-->
+    <div class="modal fade" id="taskModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Task</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Task Name:</label>
+
+                        <input type="hidden" id="taskId">
+                        <input type="text" class="form-control" id="taskName" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Task Description</label>
+                        <textarea class="form-control" id="taskDesc" placeholder="Enter Description"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" id="addTask" onclick="addTask()">Save</button>
+                    <button type="button" class="btn btn-success" id="editTask" onclick="editTask()">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Task Modal Ends-->
+</body>
+
+
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="./assets/js/custom.js"></script>
+
+</html>
